@@ -375,7 +375,7 @@ run_installer() {
                 cd "$work" || exit 1
                 printf 'luci-app-run: started %s\n' "$now"
                 printf 'luci-app-run: installing apk package %s\n\n' "$file"
-                apk add --allow-untrusted "$file"
+                apk add --allow-untrusted --force-non-repository "$file"
                 rc=$?
                 printf '\nluci-app-run: apk exited with status %s at %s\n' "$rc" "$(date '+%Y-%m-%d %H:%M:%S')"
                 exit "$rc"
